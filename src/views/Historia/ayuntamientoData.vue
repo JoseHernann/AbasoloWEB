@@ -31,7 +31,7 @@ onMounted(() => {
         backgroundImage: `linear-gradient(180deg, rgba(253, 131, 36), rgba(255, 163, 10))`
         }"
       >
-        <img :src="persona.IMAGEN" class="mt-2" >
+        <img :src="persona.IMAGEN" class="mt-2  " >
       </div>
       <p class="text-2xl  font-semibold text-primary pt-2 max-w-52 text-center">{{persona.NOMBRE}}</p>
       <p class="text-center text-xl font-semibold">{{persona.PUESTO}}</p>

@@ -21,7 +21,8 @@ export default {
       },
       backgroundImage: {
         'gradientPrimary': 'linear-gradient(129deg, #fd8324 31%, #ff4e00 104%)',
-        'gradientSecondary': "linear-gradient(142deg,#ffba4b 18%,#ff8300 82%)"
+        'gradientSecondary': 'linear-gradient(142deg,#ffba4b 18%,#ff8300 82%)',
+        'gradientGray': 'linear-gradient(142deg,#f4f4f4 18%,#7c7c7c 82%)',
       },
     },
   },

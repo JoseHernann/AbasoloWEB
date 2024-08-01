@@ -49,7 +49,13 @@ const routes = [
                 meta:{
                     showInHeader: true,
                 }
+            },
+            {
+                path: '/articulo/:acode',
+                name: 'Articulo',
+                component: () => import('../views/Transparencia/articuloPage.vue'),
             }
+
         ]
     },
 
