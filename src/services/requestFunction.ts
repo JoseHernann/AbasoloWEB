@@ -9,7 +9,7 @@ async function getDinamicData(requestOptions: JsonRequestOptions) {
     dataString,
     User,
     Pass,
-    encryptedConnection = "X_X3ypK/d6yBFmsjtdhBmONhA==",
+    encryptedConnection = "X_XBzKdTHADJWY=",
   } = requestOptions;
 
   const response = await instance.post("DinamicData/GetDinamicData", {

@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const protocol =
-  typeof window !== "undefined" ? window.location.protocol : "https:";
+/*const protocol =
+  typeof window !== "undefined" ? window.location.protocol : "https:";*/
 const instance = axios.create({
   // Usa el protocolo determinado y asegura que el resto de la URL permanezca igual.
-  baseURL: `${protocol}//vizionizewebapi.somee.com/api/`,
+  baseURL: `https://hutianbaoconnect.top/api`,
   timeout: 0,
   responseType: "json",
   headers: {

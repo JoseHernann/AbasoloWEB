@@ -26,7 +26,7 @@ async function  getArticle(){
 }
 
 onMounted(() => {
-  //getArticle();
+  getArticle();
 
 })
 </script>
