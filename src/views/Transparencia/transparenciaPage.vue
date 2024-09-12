@@ -11,7 +11,6 @@
         encryptedSP: "X_X1IkYi9GQQNVOH96PUxPlkuQVe9V0Y2lc"
       }
       buttons.value  = await getDinamicData(objt);
-
     }
     onMounted(() => {
       getBtns();
