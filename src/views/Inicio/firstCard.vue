@@ -27,7 +27,7 @@ const props = defineProps<Props>();
 .card {
   position: relative;
   width: 290px;
-  height: 354px;
+  height: 340px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@ const props = defineProps<Props>();
   left: -5px;
   margin: auto;
   width: 300px;
-  height: 364px;
+  height: 354px;
   border-radius: 10px;
   background: linear-gradient(129deg, #fd8324 31%, #ff4e00 104%);
   z-index: -10;
@@ -56,7 +56,7 @@ const props = defineProps<Props>();
 
 @media (max-width: 768px) {
   .card:before {
-    width: 239px;
+    width: 229px;
 
   }
 
@@ -92,7 +92,7 @@ const props = defineProps<Props>();
 }
 
 .card:hover::before {
-  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+  transform: rotate(-90deg) scaleX(1.20) scaleY(.87);
 }
 
 

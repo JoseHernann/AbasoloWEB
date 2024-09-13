@@ -1,19 +1,25 @@
 <script setup lang="ts">
 import {onMounted, ref, vShow} from "vue";
-import {useRoute} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 import jsonRequest from "../../services/jsonRequest";
 import getDinamicData from "../../services/requestFunction";
 import CiteDivider from "../../assets/graphic/citeDivider.vue";
 import TreeNodes from "./TreeNodes.vue";
+import LoadingWholePage from "../../components/LoadingWholePage.vue";
+import {ChevronLeftIcon} from "@heroicons/vue/24/outline";
+
 
 const route = useRoute();
+const router = useRouter();
 const articles = ref([]);
 const docTree = ref([]);
 const articleTitle = ref();
 const articleContent = ref();
 const articleDesc = ref([])
+const isLoading = ref(false)
 
 async function  getArticles(){
+   isLoading.value = true
   const objt : jsonRequest= {
     encryptedSP: "X_X1IkYi9GQQNXLDJWu6+jxSo25TY0PAALLvBpYwxagcBI=",
     paramValues:[
@@ -28,6 +34,7 @@ async function  getArticles(){
   console.log(articles.value);
   articleTitle.value = articles.value[0].TITULO;
   articleContent.value = articles.value[0].DESCRIPCION;
+  isLoading.value = false;
 }
 
 
@@ -91,8 +98,10 @@ function buildTree(data) {
 </script>
 
 <template>
-  <div class="px-5 md:px-20 flex flex-col justify-center items-center ">
+  <LoadingWholePage v-if="isLoading" />
 
+  <div class="px-5 md:px-20 flex flex-col justify-center items-center " v-else>
+    <button class="bg-primary rounded-md absolute top-32 left-10 " @click="router.push('/transparencia')"><ChevronLeftIcon class="w-8 h-8 stroke-white "/></button>
     <h1 class="text-5xl font-bold text-center py-10 text-primary ">{{articleTitle}}</h1>
     <CiteDivider class="w-10 mb-10"/>
     <p class=" text-xl max-w-1/2 text-center">{{articleContent}}</p>

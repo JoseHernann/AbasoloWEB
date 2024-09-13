@@ -15,6 +15,11 @@
     onMounted(() => {
       getBtns();
     })
+
+    function  goTo(ACod){
+      router.push({name: 'Articulo', params: {acode: ACod}})
+
+    }
 </script>
 
 <template>
@@ -47,9 +52,9 @@
       </div>
     </div>
   </section>
-  <section class="hero py-20  w-full ">
+  <section class="hero py-10  w-full ">
       <div class="flex px-10 gap-10 w-full">
-        <button class="font-semibold text-white  text-5xl bg-gradientGray rounded-xl p-10 border-2 hover:opacity-80" v-for="button in buttons" @click="router.push({name: 'Articulo', params: {acode: button.ACODE}})" >{{button.TITULO}}</button>
+        <button class="font-semibold text-white  text-2xl bg-gradientGray rounded-xl p-10 border-2 hover:opacity-80" v-for="button in buttons" @click="goTo(button.ACODE)" >{{button.TITULO}}</button>
       </div>
   </section>
 </template>

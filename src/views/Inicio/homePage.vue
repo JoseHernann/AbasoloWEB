@@ -91,15 +91,32 @@ const caruselImages = [
           <div class=" overflow-x-scroll   flex w-full justify-center gap-32  p-20  flex-wrap">
 
             <FirstCard card-content="Descubre mas de nuestro gobierno" title="Gobierno" link="+ Ayuntamiento" :icon="BuildingLibraryIcon" @click="router.push('/Gobierno')"/>
-            <FirstCard card-content="Conoce nuestro municipio" title="Historia" link="+ Fundación , Fiestas" :icon="NewspaperIcon" @click="router.push('/Historia')"/>
+            <!-- <FirstCard card-content="Conoce nuestro municipio" title="Historia" link="+ Fundación , Fiestas" :icon="NewspaperIcon" @click="router.push('/Historia')"/>  -->
             <FirstCard card-content="En Abasolo no ocultamos nada" title="Transparencia" link="+ Cuentas , Sueldos , Gastos" :icon="ScaleIcon" @click="router.push('/Transparencia')"/>
 
           </div>
     </section>
     <section class="w-full  min-h-screen  flex-col ">
       <NewsDivider class="w-full "/>
-     <ElfsightWidget class="w-full mt-5 px-4"/>
-
+      <ElfsightWidget class="w-full mt-5 px-4"/>
+    </section>
+    <section class="w-full flex flex-col p-10 gap-5" >
+      <p class="font-bold text-2xl">Numeros de emergencia </p>
+      <div class="flex gap-5 flex-wrap">
+        <a class="w-32 md:w-52 bg-primary px-8 py-2 rounded-xl text-center flex flex-col items-center justify-center"  href="tel:911">
+          <p class="text-sm md:text-xl">Emergencia</p>
+          <p class="font-bold text-xl md:text-4xl">911</p>
+        </a>
+        <a  class="w-32 md:w-52 bg-primary px-8 py-2 rounded-xl text-center flex flex-col items-center justify-center"  href="tel:8142786105">
+          <p class="text-sm md:text-xl">Protección Civil </p>
+          <p class="font-bold text-lg md:text-xl">8142786105</p>
+        </a>
+        <a  class="w-32 md:w-52 bg-primary px-8 py-2 rounded-xl text-center flex flex-col items-center justify-center"  href="tel:8182361194">
+          <p class="text-sm md:text-xl">Seguridad Pública</p>
+          <p class="font-bold text-lg md:text-xl">8182361194</p>
+        </a>
+      </div>
+      
     </section>
   </template>
 

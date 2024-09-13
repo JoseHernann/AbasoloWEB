@@ -33,7 +33,7 @@ onMounted(() => {
         <div tabindex="0" role="button" class="btn btn-ghost btn-square">
           <Bars3Icon class="w-6 h-6 stroke-primary" />
         </div>
-        <ul tabindex="0" class=" menu menu-sm   w-40  dropdown-content z-[2 ] mt-6 p-2 rounded-box shadow font-semibold bg-silver-50" >
+        <ul tabindex="0" class="w-80 dropdown-content z-[2 ] mt-6 p-4 rounded-box shadow font-semibold bg-silver-50" >
           <li v-for="(route , index ) in roleRoutes" @click="goToRoute(route.path,index)" :class="{'text-silver-500 cursor-pointer': selectedRouteIndex !== index , 'text-primary cursor-pointer': selectedRouteIndex === index , 'p-1 ':true} "> {{route.name}} </li>
         </ul>
       </div>
