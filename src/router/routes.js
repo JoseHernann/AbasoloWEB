@@ -34,14 +34,14 @@ const routes = [
                     showInHeader: true,
                 }
             },
-            {
+            /*{
                 path: '/historia',
                 name: 'Historia',
                 component: () => import('../views/Historia/historiaPage.vue'),
                 meta:{
                     showInHeader: true,
                 }
-            },
+            },*/
             {
                 path: '/transparencia',
                 name: 'Transparencia',
