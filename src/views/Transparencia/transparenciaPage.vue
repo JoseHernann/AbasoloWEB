@@ -53,8 +53,8 @@
     </div>
   </section>
   <section class="hero py-10  w-full ">
-      <div class="flex px-10 gap-10 w-full">
-        <button class="font-semibold text-white  text-2xl bg-gradientGray rounded-xl p-10 border-2 hover:opacity-80" v-for="button in buttons" @click="goTo(button.ACODE)" >{{button.TITULO}}</button>
+      <div class="flex px-[5%] md:px-10 gap-10 w-full flex-wrap">
+        <button class="font-semibold text-white  shadow-xl text-xl md:text-2xl bg-gradientPrimary rounded-xl p-5 md:p-10 border-0  hover:opacity-80" v-for="button in buttons" @click="goTo(button.ACODE)" >{{button.TITULO}}</button>
       </div>
   </section>
 </template>

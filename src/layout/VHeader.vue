@@ -19,15 +19,15 @@ function getAuthorizedRoutes() {
 }
 
 
-onMounted(() => {
+/*onMounted(() => {
   router.push(roleRoutes[0].path );
-});
+});*/
 </script>
 
 <template>
   <nav class="navbar bg-silver-50 ">
     <div class="flex-1">
-      <img src="../assets/logos/logo.png" class="w-24 mb-2" />
+      <img src="../assets/logos/logo.png" class="w-24 mb-2"  @click="router.push('/')"/>
     </div>
       <div class="dropdown dropdown-end bg-white rounded-lg shadow-sm  md:hidden ">
         <div tabindex="0" role="button" class="btn btn-ghost btn-square">

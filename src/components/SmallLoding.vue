@@ -1,10 +1,12 @@
-<script setup lang="ts">
+<script setup>
+
 </script>
 
 <template>
-    <RouterView />
+  <div class="loader"></div>
 </template>
 
 <style scoped>
 
 </style>
+
