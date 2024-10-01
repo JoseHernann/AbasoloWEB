@@ -12,7 +12,7 @@ const props = defineProps<Props>();
 
 <template>
   <div class="card">
-    <component :is="props.icon" class="stroke-1"/>
+    <component :is="props.icon" class="stroke-1 stroke-primary"/>
     <p class="heading">
       {{ props.title }}
     </p>
@@ -48,7 +48,7 @@ const props = defineProps<Props>();
   width: 300px;
   height: 354px;
   border-radius: 10px;
-  background: linear-gradient(129deg, #fd8324 31%, #ff4e00 104%);
+  background: linear-gradient(120deg, #fd8324 31%, #ff4e00 104%);
   z-index: -10;
   pointer-events: none;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -69,7 +69,7 @@ const props = defineProps<Props>();
   inset: 0;
   background: linear-gradient(129deg, #fd8324 31%, #ff4e00 104%);
   transform: translate3d(0, 0, 0) scale(1);
-  filter: blur(40px);
+  filter: blur(10px);
 }
 
 .heading {

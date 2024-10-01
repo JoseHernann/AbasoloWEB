@@ -1,5 +1,5 @@
 <script setup >
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import BoltCards from "../../components/boltCards.vue";
 
 import  { BuildingLibraryIcon , NewspaperIcon, ScaleIcon } from "@heroicons/vue/24/outline/index.js";
@@ -13,11 +13,14 @@ import InstagramLogo from "../../assets/Icons/InstagramLogo.vue";
 
 
 // Carusel images
-import imagen1 from "../../assets/images/image1.webp";
-import imagen2 from "../../assets/images/image2.webp";
+import imagen1 from "../../assets/images/image2.webp";
+import imagen2 from "../../assets/images/image1.webp";
 import imagen3 from "../../assets/images/image3.webp";
 import imagen4 from "../../assets/images/image4.webp";
 import {BuildingOffice2Icon} from "@heroicons/vue/24/outline/index.js";
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import '@splidejs/splide/css';
+
 import NewsDivider from "../../assets/graphic/newsDivider.vue";
 import ElfsightWidget from "./elfsightWidget.vue";
 import FirstCard from "./firstCard.vue";
@@ -40,7 +43,7 @@ const socialMedia = [
 
 const caruselImages = [
   {
-    src: imagen1,
+    src: imagen3,
     alt: 'Abasolo',
   },
   {
@@ -48,7 +51,7 @@ const caruselImages = [
     alt: 'Abasolo',
   },
   {
-    src: imagen3,
+    src: imagen1,
     alt: 'Abasolo',
   },
   {
@@ -56,6 +59,16 @@ const caruselImages = [
     alt: 'Abasolo',
   },
 ];
+
+const currentIndex = ref(0)
+function  startAutoSlide() {
+  setInterval(() => {
+    currentIndex.value = (currentIndex.value + 1) % caruselImages.length;
+  }, 5000);
+}
+onMounted(() => {
+    startAutoSlide()
+})
 </script>
 
   <template>
@@ -77,9 +90,32 @@ const caruselImages = [
             </a>
           </div>
         </div>
-        <div class="carousel carousel-center w-full  clip  h-full absolute -z-[1]  lg:relative lg:z-[1]  ">
-          <div class="carousel-item   " v-for="image in caruselImages">
-            <img :src="image.src" :alt="image.alt" />
+        <div class="absolute -z-10 md:z-10 md:relative w-full overflow-hidden clip opacity-85 md:opacity-100">
+          <!-- Slider -->
+          <div
+              class="flex transition-transform duration-500 ease-in-out"
+              :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+          >
+            <div
+                v-for="(image, index) in caruselImages"
+                :key="index"
+                class="w-full   flex-shrink-0"
+            >
+              <img :src="image.src" alt="slide" class="w-full  h-screen object-cover" />
+            </div>
+          </div>
+
+          <!-- Dots -->
+          <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+      <span
+          v-for="(image, index) in caruselImages"
+          :key="index"
+          class="w-3 h-3 rounded-full"
+          :class="{
+          'bg-gray-300 ': currentIndex === index,
+          'bg-gray-50 opacity-20': currentIndex !== index,
+        }"
+      ></span>
           </div>
         </div>
       </div>
@@ -100,9 +136,9 @@ const caruselImages = [
       <NewsDivider class="w-full "/>
       <ElfsightWidget class="w-full mt-5 px-4"/>
     </section>
-    <section class="w-full flex flex-col p-10 gap-5" >
+    <section class="w-full flex flex-col items-center  p-10 gap-5" >
       <p class="font-bold text-2xl">Numeros de emergencia </p>
-      <div class="flex gap-5 flex-wrap">
+      <div class="flex gap-2 flex-wrap justify-center">
         <a class="w-32 md:w-52 bg-primary px-8 py-2 rounded-xl text-center flex flex-col items-center justify-center"  href="tel:911">
           <p class="text-sm md:text-xl">Emergencia</p>
           <p class="font-bold text-xl md:text-4xl">911</p>
@@ -126,5 +162,9 @@ const caruselImages = [
      .clip {
        clip-path: polygon(24.9% 0%, 100.2% 0%, 100% 100%, 0% 100%);
      }
+   }
+   .slider {
+     display: flex;
+     width: 100%;
    }
 </style>
